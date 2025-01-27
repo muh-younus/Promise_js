@@ -4,33 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+
 </head>
 <body>
+
+
+
+    <div id="demo"></div>
+
+    <div id="delay"></div>
     
 
 
     <script>
 
-        let p1 = new Promise((resolve, reject) => {
+        let p = document.getElementById("demo");
+        let setTime = document.getElementById("delay");
 
-            console.log("hello")
 
-            setTimeout(() => {
+        setTimeout(()=>{
 
-                resolve(1);
+            myFunction("I hate you");
+        },3000);
 
-            }, 2000)
-        })
+        function myFunction(value){
 
-        p1.then(() => {
+            setTime.innerHTML = value;
+        }
 
-            console.log("Second promises");
-        })
+        function main(value){
 
-        p1.then( () => {
+            p.innerHTML = value;
+        }
 
-            console.log("Thired promises")
-        })
+        let prom = new Promise((resolve,reject) => {
+
+            let x = 9;
+
+            if(x==0){
+
+                resolve("Ok")
+            }
+            else{
+
+                reject("Not resolve");
+            }
+        });
+
+        prom.then(
+            function(value){
+
+                main(value);
+            },
+
+            function(error){
+
+                main(error);
+            }
+        )
     </script>
 </body>
 </html>

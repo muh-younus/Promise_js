@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promise.Practise </title>
+</head>
+<body>
+    
+
+
+    <script>
+
+        let p1 = new Promise((resolve,reject) =>{
+
+            setTimeout(() => {
+
+                reject(new Error("new error"));
+                // resolve("value 1");
+
+
+            },1000)
+        });
+
+       let h1 = new Promise((resovle,reject) => {
+
+        setTimeout(() => {
+
+            resovle("H1 Promise is solve");
+            // reject(new Error("error"));
+        },3000)
+
+       });
+
+       let f1 = new Promise((res,rej) => {
+
+        setTimeout(() => {
+
+
+            res("f1 is running accurately");
+        },4000);
+            
+        })
+
+       
+
+    //    let all_promise = Promise.allSettled([p1,h1,f1]);
+    //    let all_promise = Promise.all([p1,h1,f1]);
+    // let all_promise = Promise.race([p1,h1,f1]);
+    let all_promise = Promise.any([p1,h1,f1]);
+
+       all_promise.then((value) => {
+
+        console.log(value);
+       })
+    </script>
+</body>
+</html>

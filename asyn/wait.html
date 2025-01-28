@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+
+
+let ali = new Promise((res,rej) => {
+
+    setTimeout(()=> {
+
+        res("Hey,  I am new here")
+    },4000);
+
+});
+
+let zeeshan = new Promise((res, rej) => {
+
+    setTimeout(() => {
+
+        res("Hello, This is Zeeshan Abbasi");
+    },2000)
+});
+
+ali.then(alert);
+zeeshan.then(alert);
+
+    </script>
+</body>
+</html>

@@ -38,18 +38,34 @@ let stud1 = await ali;
 console.log("Fetching Stud1 is: "+ stud1);
 
 console.log("Fetching Student detail.....!!");
-let stud2 = await zeeshan;
+let stud2 =  await zeeshan;
 console.log("Fetching stud2 is: "+ stud2);
 
 return [stud1,stud2];
 
         }
 
-        let b = younus();
+        const cherry = async () => {
+
+            console.log("Welcome to student cherry");
+        }
+
+       const main = async ()=> {
+      
+        let b =  await younus();
+        let c = await cherry();
 
         b.then((value) => {
             console.log(value);
         })
+
+       }
+
+       main();
+
+        
+
+       
 
     </script>
 </body>

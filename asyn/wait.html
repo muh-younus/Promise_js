@@ -11,6 +11,10 @@
 
     <script>
 
+        async function younus(){
+
+        
+
 
 let ali = new Promise((res,rej) => {
 
@@ -29,8 +33,23 @@ let zeeshan = new Promise((res, rej) => {
     },2000)
 });
 
-ali.then(alert);
-zeeshan.then(alert);
+console.log("Fetching new student detail.......!!");
+let stud1 = await ali;
+console.log("Fetching Stud1 is: "+ stud1);
+
+console.log("Fetching Student detail.....!!");
+let stud2 = await zeeshan;
+console.log("Fetching stud2 is: "+ stud2);
+
+return [stud1,stud2];
+
+        }
+
+        let b = younus();
+
+        b.then((value) => {
+            console.log(value);
+        })
 
     </script>
 </body>
